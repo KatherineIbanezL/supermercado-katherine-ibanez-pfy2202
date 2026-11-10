@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { InventoryProvider } from './context/InventoryContext';
 
 import Navbar from './components/Navbar';
@@ -11,7 +11,7 @@ import Carrito from './pages/Carrito';
 function App() {
   return (
     <InventoryProvider>
-      <Router basename={import.meta.env.BASE_URL}>
+      <Router>
         <div className="min-h-screen bg-gray-50 flex flex-col">
           <Navbar />
           <main className="flex-grow p-2 sm:p-4 max-w-4xl w-full mx-auto">
