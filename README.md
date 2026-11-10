@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Supermercado Admin - Sistema de Gestión de Inventario
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicación web Single Page Application (SPA) desarrollada con **React**, **Tailwind CSS** y **React Router DOM** para la administración de inventario de productos de supermercado, control de stock y flujo de compras interactivo.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Características Principales
 
-### `npm start`
+* **Gestión de Inventario (CRUD):**
+  * Listado completo de artículos con estado de stock.
+  * Incorporación de nuevos productos con validación de formularios.
+  * Eliminación dinámica de artículos.
+* **Filtros por Categorías:** Clasificación y filtrado de productos por tipo (*Lácteos, Abarrotes, Panadería, Frutas y Verduras, Bebidas, Limpieza*).
+* **Gestión de Stock en Tiempo Real:** Sincronización automática de existencias al agregar unidades al carrito de compras.
+* **Navegación Dinámica:** Enrutamiento entre páginas sin recarga mediante `react-router-dom`.
+* **Diseño 100% Responsivo:** Interfaz adaptada a dispositivos móviles y pantallas de escritorio construida con **Tailwind CSS**.
+* **Modales Personalizados:** Feedback visual al usuario (confirmaciones y alertas) mediante componentes de React sin uso de `alert()` nativos.
+* **Arquitectura Modular:** Separación de datos (`/data`), contexto global (`/context`), componentes (`/components`) y vistas (`/pages`).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tecnologías Utilizadas
 
-### `npm test`
+* **React** (v18+) - Librería principal para la interfaz de usuario.
+* **React Router DOM** (v6+) - Enrutamiento y navegación SPA.
+* **Context API** - Manejo del estado global (inventario y carrito).
+* **Tailwind CSS** - Framework de estilos utility-first para diseño responsivo.
+* **JavaScript (ES6+)** - Lógica del cliente y manipulación de datos.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Estructura del Proyecto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```text
+supermercado-inventario/
+├── public/
+│   └── images/               # Imágenes estáticas de los productos (.webp, .png)
+├── src/
+│   ├── components/           # Componentes reutilizables (Navbar, FooterMenu)
+│   ├── context/              # Contexto global (InventoryContext)
+│   ├── data/                 # Datos iniciales estructurados (articulos.js)
+│   ├── pages/                # Vistas principales (ListarArticulos, IngresarArticulo, DetalleArticulo, Carrito)
+│   ├── App.jsx               # Configuración de rutas y layout principal
+│   ├── index.css             # Directivas principales de Tailwind CSS
+│   └── main.jsx              # Punto de entrada de React
+├── package.json              # Dependencias y scripts del proyecto
+└── README.md                 # Documentación del proyecto
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Instalación y Ejecución Local
 
-### `npm run eject`
+Para ejecutar este proyecto localmente en tu máquina, sigue estos pasos:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/tu-usuario/supermercado-inventario.git
+cd supermercado-inventario
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. Instalar dependencias
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 3. Iniciar el servidor de desarrollo
+```bash
+npm run dev
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+La aplicación se abrirá automáticamente en tu navegador (por defecto en `http://localhost:5173` o el puerto configurado por Vite/React).
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
