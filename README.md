@@ -42,7 +42,7 @@ supermercado-inventario/
 │   ├── pages/                # Vistas principales (ListarArticulos, IngresarArticulo, DetalleArticulo, Carrito)
 │   ├── App.jsx               # Configuración de rutas y layout principal
 │   ├── index.css             # Directivas principales de Tailwind CSS
-│   └── main.jsx              # Punto de entrada de React
+│   └── index.js           # Punto de entrada de React
 ├── package.json              # Dependencias y scripts del proyecto
 └── README.md                 # Documentación del proyecto
 ```
