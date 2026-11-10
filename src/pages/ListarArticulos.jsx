@@ -12,6 +12,16 @@ function ListarArticulos() {
     ? articulos.filter(a => a.tipo === filtroCategoria)
     : articulos;
 
+  // Función auxiliar para construir la URL correcta de las imágenes
+  const obtenerRutaImagen = (rutaImagen) => {
+    if (!rutaImagen) return 'https://via.placeholder.com/150?text=Producto';
+    if (rutaImagen.startsWith('http')) return rutaImagen;
+    
+    // Limpia la barra inicial si existe
+    const rutaLimpia = rutaImagen.startsWith('/') ? rutaImagen.slice(1) : rutaImagen;
+    return `${import.meta.env.BASE_URL}${rutaLimpia}`;
+  };
+
   return (
     <div className="max-w-4xl mx-auto bg-white p-4 sm:p-6 border border-gray-200 rounded-lg shadow-md mt-4 sm:mt-6">
       {/* Encabezado de la Sección */}
@@ -47,12 +57,13 @@ function ListarArticulos() {
           ))}
         </div>
       </div>
-      {/* VISTA 1: Tarjetas para Celulares (ocultas en pantallas medianas hacia arriba) */}
+
+      {/* VISTA 1: Tarjetas para Celulares */}
       <div className="grid grid-cols-1 gap-4 sm:hidden">
         {articulosFiltrados.map((articulo) => (
           <div key={articulo.id} className="border border-gray-200 rounded-lg p-4 flex gap-4 items-center bg-gray-50 shadow-sm">
             <img 
-              src={articulo.imagen || '/images/default.webp'} 
+              src={obtenerRutaImagen(articulo.imagen)}
               alt={articulo.nombre} 
               className="w-16 h-16 object-cover rounded-md border bg-white flex-shrink-0"
               onError={(e) => {
@@ -90,7 +101,7 @@ function ListarArticulos() {
         )}
       </div>
 
-      {/* VISTA 2: Tabla para Pantallas Grandes (oculta en celulares) */}
+      {/* VISTA 2: Tabla para Pantallas Grandes */}
       <div className="hidden sm:block overflow-x-auto">
         <table className="w-full border-collapse bg-white text-left text-sm text-gray-700">
           <thead className="bg-gray-100">
@@ -108,7 +119,7 @@ function ListarArticulos() {
               <tr key={articulo.id} className="hover:bg-gray-50">
                 <td className="px-4 py-3">
                   <img 
-                    src={articulo.imagen || '/images/default.webp'} 
+                    src={obtenerRutaImagen(articulo.imagen)}
                     alt={articulo.nombre} 
                     className="w-12 h-12 object-cover rounded-md border border-gray-200"
                     onError={(e) => {

@@ -4,21 +4,21 @@ export const productosIniciales = [
     marca: 'Soprole', 
     tipo: 'Lácteos', 
     stock: 50,
-    imagen: '/images/leche-soprole.webp'
+    imagen: 'images/leche-soprole.webp'
   },
   { id: 2, 
     nombre: 'Pan de Molde', 
     marca: 'Ideal', 
     tipo: 'Panadería', 
     stock: 20,
-    imagen: '/images/pandemolde.webp'
+    imagen: 'images/pandemolde.webp'
   },
   { id: 3, 
     nombre: 'Arroz Grado 1', 
     marca: 'Tucapel', 
     tipo: 'Abarrotes', 
     stock: 100,
-    imagen: '/images/arroz-tucapel.webp'
+    imagen: 'images/arroz-tucapel.webp'
   },
 ];
 

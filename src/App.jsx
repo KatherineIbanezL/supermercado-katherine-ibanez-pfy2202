@@ -11,7 +11,7 @@ import Carrito from './pages/Carrito';
 function App() {
   return (
     <InventoryProvider>
-      <Router>
+      <Router basename={import.meta.env.BASE_URL}>
         <div className="min-h-screen bg-gray-50 flex flex-col">
           <Navbar />
           <main className="flex-grow p-2 sm:p-4 max-w-4xl w-full mx-auto">
